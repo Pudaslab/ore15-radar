@@ -1,0 +1,118 @@
+<!-- ORE15.IT · TOP PERFORMER · TOP PERFORMER · USA 4-1 PARAGUAY -->
+<style>
+  .tp-wrap{font-family:"Segoe UI",Arial,sans-serif;background:#f4f6f9;border-radius:16px;padding:20px 16px;max-width:600px;margin:20px auto;color:#1a1f36;box-sizing:border-box;border:1px solid #dde2ee;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+  .tp-wrap *{box-sizing:border-box}
+  .tp-sitelabel{font-size:10px;letter-spacing:4px;color:#9aa0b8;font-weight:700;text-align:center;margin-bottom:4px}
+  .tp-title{font-size:18px;font-weight:800;letter-spacing:1px;color:#1a1f36;text-align:center;margin:0 0 4px}
+  .tp-sub{font-size:11px;color:#9aa0b8;margin-bottom:16px;text-align:center}
+  .tp-legend{background:#fff;border:1px solid #dde2ee;border-radius:10px;padding:12px 14px;margin-bottom:16px}
+  .tp-legend-title{font-size:10px;letter-spacing:3px;color:#9aa0b8;font-weight:700;margin-bottom:10px}
+  .tp-legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+  .tp-legend-item{font-size:11px;color:#6b7a9e}
+  .tp-legend-item strong{color:#1a1f36}
+  .tp-card{background:#fff;border:1px solid #dde2ee;border-radius:12px;padding:14px;margin-bottom:10px;position:relative}
+  .tp-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .tp-flag{width:36px;height:25px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15);flex-shrink:0}
+  .tp-flag img{width:100%;height:100%;object-fit:cover}
+  .tp-card-info{flex:1}
+  .tp-card-name{font-size:15px;font-weight:800;color:#1a1f36;margin-bottom:2px}
+  .tp-card-detail{font-size:11px;color:#9aa0b8}
+  .tp-card-right{text-align:right;flex-shrink:0}
+  .tp-val-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:2px}
+  .tp-idx-val{font-size:22px;font-weight:800}
+  .tp-idx-label{font-size:9px;color:#9aa0b8;letter-spacing:2px}
+  .tp-rank{font-size:11px;font-weight:700;color:#dde2ee;margin-bottom:4px}
+  .tp-indices{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .tp-idx-item{background:#f4f6f9;border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center}
+  .tp-idx-name{font-size:10px;color:#6b7a9e;font-weight:600}
+  .tp-idx-right{text-align:right}
+  .tp-idx-num{font-size:13px;font-weight:800}
+  .tp-idx-badge{font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px}
+  .tp-idx-na{font-size:11px;color:#c0c6d8;font-style:italic}
+  .tp-stats{display:flex;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid #eef0f7}
+  .tp-stat{text-align:center;flex:1}
+  .tp-stat-val{font-size:16px;font-weight:800;color:#1a1f36}
+  .tp-stat-key{font-size:9px;color:#9aa0b8;letter-spacing:1px}
+  .tp-footer{text-align:center;font-size:9px;letter-spacing:2px;color:#c0c6d8;margin-top:14px}
+</style>
+
+<div class="tp-wrap">
+  <div class="tp-sitelabel">ORE15.IT · FIFA WORLD CUP 2026</div>
+  <div class="tp-title">TOP PERFORMER · USA 4-1 PARAGUAY</div>
+  <div class="tp-sub">I migliori giocatori per indice complessivo</div>
+
+  <div class="tp-legend">
+    <div class="tp-legend-title">GUIDA AGLI INDICI</div>
+    <div class="tp-legend-grid">
+      <div class="tp-legend-item"><strong>Progressione</strong> — capacità di far avanzare la squadra con la palla</div>
+      <div class="tp-legend-item"><strong>Offensivo</strong> — contributo in fase di attacco: tiri, xG, assist, dribbling</div>
+      <div class="tp-legend-item"><strong>Difensivo</strong> — impatto in fase difensiva: contrasti, intercetti, recuperi</div>
+      <div class="tp-legend-item"><strong>Tecnico</strong> — qualità tecnica: passaggi, cross, precisione complessiva</div>
+    </div>
+  </div>
+
+  <div id="tp-cards"></div>
+  <div class="tp-footer">Indici proprietari ore15.it · Dati raccolti da Sofascore</div>
+</div>
+
+<script>
+(function(){
+  var DATA=[{"name": "Folarin Balogun", "team": "USA", "role": "Prima punta", "giorn": 1, "idx": 10.35, "val": "Eccezionale", "idxProg": 23.68, "valProg": "Buono", "idxOff": 11.78, "valOff": "Ottimo", "idxDif": 0.59, "valDif": "Insufficiente", "idxTec": 5.37, "valTec": "Buono", "gol": 2, "assist": 0, "min": 75}, {"name": "Alexander Freeman", "team": "USA", "role": "Terzino", "giorn": 1, "idx": 6.51, "val": "Buono", "idxProg": 9.18, "valProg": "Sufficiente", "idxOff": 2.0, "valOff": "Sufficiente", "idxDif": 7.14, "valDif": "Ottimo", "idxTec": 7.72, "valTec": "Ottimo", "gol": 0, "assist": 1, "min": 90}, {"name": "Julio Enciso", "team": "Paraguay", "role": "Trequartista", "giorn": 1, "idx": 5.35, "val": "Buono", "idxProg": null, "valProg": "", "idxOff": 2.0, "valOff": "Sufficiente", "idxDif": 4.11, "valDif": "Buono", "idxTec": 10.7, "valTec": "Eccezionale", "gol": 0, "assist": 1, "min": 90}];
+  var VC={"Eccezionale": "#7c3aed", "Ottimo": "#059669", "Buono": "#0284c7", "Sufficiente": "#d97706", "Insufficiente": "#dc2626", "Negativo": "#6b7280"};
+  var VB={"Eccezionale": "#f5f3ff", "Ottimo": "#f0fdf4", "Buono": "#eff6ff", "Sufficiente": "#fffbeb", "Insufficiente": "#fef2f2", "Negativo": "#f9fafb"};
+  var FM={"USA": "us", "Paraguay": "py", "Canada": "ca", "Bosnia": "ba", "Messico": "mx", "Corea del Sud": "kr", "Rep.Ceca": "cz", "Sudafrica": "za"};
+
+  var medals=['🥇','🥈','🥉'];
+
+  function idxItem(label, num, val){
+    if(num===null||num===undefined){
+      return '<div class="tp-idx-item"><div class="tp-idx-name">'+label+'</div>'+
+             '<div class="tp-idx-na">n.d.</div></div>';
+    }
+    var c=VC[val]||'#6b7280';
+    var bg=VB[val]||'#f9fafb';
+    return '<div class="tp-idx-item">'+
+      '<div class="tp-idx-name">'+label+'</div>'+
+      '<div class="tp-idx-right">'+
+        '<div class="tp-idx-num" style="color:'+c+'">'+num.toFixed(2)+'</div>'+
+        '<div class="tp-idx-badge" style="background:'+bg+';color:'+c+'">'+val+'</div>'+
+      '</div></div>';
+  }
+
+  var container=document.getElementById('tp-cards');
+  DATA.forEach(function(p,i){
+    var color=VC[p.val]||'#6b7280';
+    var bg=VB[p.val]||'#f9fafb';
+    var flag=FM[p.team]||p.team.substring(0,2).toLowerCase();
+    var medal=i<3?medals[i]:'#'+(i+1);
+
+    container.innerHTML+=
+      '<div class="tp-card" style="border-left:4px solid '+color+'">'+
+        '<div class="tp-card-top">'+
+          '<div class="tp-flag"><img src="https://flagcdn.com/w80/'+flag+'.png" alt="'+p.team+'"></div>'+
+          '<div class="tp-card-info">'+
+            '<div class="tp-rank">'+medal+'</div>'+
+            '<div class="tp-card-name">'+p.name+'</div>'+
+            '<div class="tp-card-detail">'+p.team+' · '+p.role+' · '+p.min+' min</div>'+
+          '</div>'+
+          '<div class="tp-card-right">'+
+            '<div class="tp-val-badge" style="background:'+bg+';color:'+color+'">'+p.val+'</div>'+
+            '<div class="tp-idx-val" style="color:'+color+'">'+p.idx.toFixed(2)+'</div>'+
+            '<div class="tp-idx-label">INDICE</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="tp-indices">'+
+          idxItem('Progressione',p.idxProg,p.valProg)+
+          idxItem('Offensivo',p.idxOff,p.valOff)+
+          idxItem('Difensivo',p.idxDif,p.valDif)+
+          idxItem('Tecnico',p.idxTec,p.valTec)+
+        '</div>'+
+        '<div class="tp-stats">'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.gol+'</div><div class="tp-stat-key">GOL</div></div>'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.assist+'</div><div class="tp-stat-key">ASSIST</div></div>'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.idx.toFixed(2)+'</div><div class="tp-stat-key">IDX COMP.</div></div>'+
+        '</div>'+
+      '</div>';
+  });
+})();
+</script>
