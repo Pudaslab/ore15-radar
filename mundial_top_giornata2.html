@@ -1,0 +1,108 @@
+<!-- ORE15.IT · TOP PERFORMER MONDIALE · GIORNATA 2 -->
+<style>
+  .tp-wrap{font-family:"Segoe UI",Arial,sans-serif;background:#f4f6f9;border-radius:16px;padding:20px 16px;max-width:600px;margin:20px auto;color:#1a1f36;box-sizing:border-box;border:1px solid #dde2ee;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+  .tp-wrap *{box-sizing:border-box}
+  .tp-header{text-align:center;margin-bottom:6px}
+  .tp-sitelabel{font-size:10px;letter-spacing:4px;color:#9aa0b8;font-weight:700;margin-bottom:4px}
+  .tp-title{font-size:20px;font-weight:800;letter-spacing:1px;color:#1a1f36;margin:0 0 4px}
+  .tp-sub{font-size:11px;color:#9aa0b8;margin-bottom:16px;text-align:center}
+  .tp-legend{background:#fff;border:1px solid #dde2ee;border-radius:10px;padding:12px 14px;margin-bottom:16px}
+  .tp-legend-title{font-size:10px;letter-spacing:3px;color:#9aa0b8;font-weight:700;margin-bottom:10px}
+  .tp-legend-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px}
+  .tp-legend-item{font-size:11px;color:#6b7a9e}
+  .tp-legend-item strong{color:#1a1f36}
+  .tp-card{background:#fff;border:1px solid #dde2ee;border-radius:12px;padding:14px;margin-bottom:10px;position:relative;overflow:hidden}
+  .tp-card-rank{position:absolute;top:12px;right:14px;font-size:11px;font-weight:700;color:#dde2ee}
+  .tp-card-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .tp-card-flag{width:36px;height:25px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15);flex-shrink:0}
+  .tp-card-flag img{width:100%;height:100%;object-fit:cover}
+  .tp-card-info{flex:1}
+  .tp-card-name{font-size:15px;font-weight:800;color:#1a1f36;margin-bottom:2px}
+  .tp-card-detail{font-size:11px;color:#9aa0b8}
+  .tp-card-idx{text-align:right}
+  .tp-card-idx-val{font-size:22px;font-weight:800}
+  .tp-card-idx-label{font-size:9px;color:#9aa0b8;letter-spacing:2px}
+  .tp-card-val-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;margin-bottom:2px}
+  .tp-indices{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .tp-idx-item{background:#f4f6f9;border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center}
+  .tp-idx-name{font-size:10px;color:#6b7a9e;font-weight:600}
+  .tp-idx-right{text-align:right}
+  .tp-idx-num{font-size:13px;font-weight:800}
+  .tp-idx-badge{font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px}
+  .tp-idx-na{font-size:11px;color:#c0c6d8;font-style:italic}
+  .tp-stats{display:flex;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid #eef0f7}
+  .tp-stat{text-align:center;flex:1}
+  .tp-stat-val{font-size:16px;font-weight:800;color:#1a1f36}
+  .tp-stat-key{font-size:9px;color:#9aa0b8;letter-spacing:1px}
+  .tp-footer{text-align:center;font-size:9px;letter-spacing:2px;color:#c0c6d8;margin-top:14px}
+</style>
+<div class="tp-wrap">
+  <div class="tp-header">
+    <div class="tp-sitelabel">ORE15.IT · FIFA WORLD CUP 2026</div>
+    <div class="tp-title">TOP PERFORMER · GIORNATA 2</div>
+  </div>
+  <div class="tp-sub">I migliori giocatori per indice complessivo</div>
+  <div class="tp-legend">
+    <div class="tp-legend-title">GUIDA AGLI INDICI</div>
+    <div class="tp-legend-grid">
+      <div class="tp-legend-item"><strong>Progressione</strong> — capacità di far avanzare la squadra con la palla</div>
+      <div class="tp-legend-item"><strong>Offensivo</strong> — contributo in fase di attacco: tiri, xG, assist, dribbling</div>
+      <div class="tp-legend-item"><strong>Difensivo</strong> — impatto in fase difensiva: contrasti, intercetti, recuperi</div>
+      <div class="tp-legend-item"><strong>Tecnico</strong> — qualità tecnica: passaggi, cross, precisione complessiva</div>
+    </div>
+  </div>
+  <div id="tp-cards"></div>
+  <div class="tp-footer">Indici proprietari ore15.it · Dati raccolti da Sofascore</div>
+</div>
+<script>
+(function(){
+  var DATA=[{"name": "Elijah Just", "team": "Nuova Zelanda", "role": "Ala", "idx": 14.957212, "val": "Eccezionale", "idxProg": 29.351903, "valProg": "Ottimo", "idxOff": 11.16, "valOff": "Ottimo", "idxDif": 6.888889, "valDif": "Buono", "idxTec": 6.061538, "valTec": "Buono", "gol": 2, "assist": 0, "min": 90}, {"name": "Diney", "team": "Capo Verde", "role": "Difensore centrale", "idx": 10.959515, "val": "Eccezionale", "idxProg": 21.406728, "valProg": "Ottimo", "idxOff": 1.495, "valOff": "Insufficiente", "idxDif": 9.611111, "valDif": "Ottimo", "idxTec": 5.666667, "valTec": "Buono", "gol": 0, "assist": 0, "min": 90}, {"name": "Brandon Mechele", "team": "Belgio", "role": "Difensore centrale", "idx": 10.552951, "val": "Eccezionale", "idxProg": 16.365665, "valProg": "Buono", "idxOff": 2.455, "valOff": "Sufficiente", "idxDif": 8.166667, "valDif": "Ottimo", "idxTec": 12.705172, "valTec": "Eccezionale", "gol": 0, "assist": 0, "min": 90}, {"name": "Pedri", "team": "Spagna", "role": "Mezzala", "idx": 8.968114, "val": "Ottimo", "idxProg": 14.678444, "valProg": "Buono", "idxOff": 6.65, "valOff": "Buono", "idxDif": 8.357143, "valDif": "Ottimo", "idxTec": 6.186869, "valTec": "Buono", "gol": 0, "assist": 0, "min": 90}, {"name": "Ramin Rezaeian", "team": "Iran", "role": "Terzino", "idx": 8.833558, "val": "Ottimo", "idxProg": 14.962358, "valProg": "Buono", "idxOff": 12.97, "valOff": "Ottimo", "idxDif": 6.055556, "valDif": "Buono", "idxTec": 1.897619, "valTec": "Insufficiente", "gol": 1, "assist": 1, "min": 90}, {"name": "Abdulelah Al-Amri", "team": "Arabia Saudita", "role": "Difensore centrale", "idx": 8.41163, "val": "Ottimo", "idxProg": null, "valProg": null, "idxOff": 10.57, "valOff": "Ottimo", "idxDif": 8.416667, "valDif": "Ottimo", "idxTec": 7.768519, "valTec": "Ottimo", "gol": 1, "assist": 0, "min": 90}, {"name": "Emam Ashour", "team": "Egitto", "role": "Mezzala", "idx": 8.310463, "val": "Ottimo", "idxProg": 18.710126, "valProg": "Ottimo", "idxOff": 4.455, "valOff": "Sufficiente", "idxDif": 7.625, "valDif": "Ottimo", "idxTec": 2.451724, "valTec": "Insufficiente", "gol": 1, "assist": 0, "min": 75}, {"name": "Maximiliano Araujo", "team": "Uruguay", "role": "Terzino", "idx": 6.129271, "val": "Buono", "idxProg": null, "valProg": null, "idxOff": 9.71, "valOff": "Ottimo", "idxDif": 2.5, "valDif": "Sufficiente", "idxTec": 8.971429, "valTec": "Ottimo", "gol": 1, "assist": 0, "min": 84}];
+  var VAL_COLORS={'Eccezionale':'#7c3aed','Ottimo':'#059669','Buono':'#0284c7','Sufficiente':'#d97706','Insufficiente':'#dc2626','Negativo':'#6b7280'};
+  var VAL_BG={'Eccezionale':'#f5f3ff','Ottimo':'#f0fdf4','Buono':'#eff6ff','Sufficiente':'#fffbeb','Insufficiente':'#fef2f2','Negativo':'#f9fafb'};
+  var FLAG_MAP={"Spagna": "es", "Capo Verde": "cv", "Belgio": "be", "Egitto": "eg", "Arabia Saudita": "sa", "Uruguay": "uy", "Iran": "ir", "Nuova Zelanda": "nz"};
+  var container=document.getElementById('tp-cards');
+  function idxItem(label,num,val){
+    if(num===null||num===undefined||isNaN(num))
+      return '<div class="tp-idx-item"><div class="tp-idx-name">'+label+'</div><div class="tp-idx-na">n.d.</div></div>';
+    var c=VAL_COLORS[val]||'#6b7280',bg2=VAL_BG[val]||'#f9fafb';
+    return '<div class="tp-idx-item"><div class="tp-idx-name">'+label+'</div>'+
+      '<div class="tp-idx-right"><div class="tp-idx-num" style="color:'+c+'">'+num.toFixed(2)+'</div>'+
+      '<div class="tp-idx-badge" style="background:'+bg2+';color:'+c+'">'+val+'</div></div></div>';
+  }
+  DATA.forEach(function(p,i){
+    var color=VAL_COLORS[p.val]||'#6b7280';
+    var bg=VAL_BG[p.val]||'#f9fafb';
+    var flag=FLAG_MAP[p.team]||p.team.substring(0,2).toLowerCase();
+    var medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':''+(i+1);
+    var card=
+      '<div class="tp-card" style="border-left:4px solid '+color+'">'+
+        '<div class="tp-card-rank">'+medal+'</div>'+
+        '<div class="tp-card-top">'+
+          '<div class="tp-card-flag"><img src="https://flagcdn.com/w80/'+flag+'.png" alt="'+p.team+'"></div>'+
+          '<div class="tp-card-info">'+
+            '<div class="tp-card-name">'+p.name+'</div>'+
+            '<div class="tp-card-detail">'+p.team+' · '+p.role+' · '+p.min+' min</div>'+
+          '</div>'+
+          '<div class="tp-card-idx">'+
+            '<div class="tp-card-val-badge" style="background:'+bg+';color:'+color+'">'+p.val+'</div>'+
+            '<div class="tp-card-idx-val" style="color:'+color+'">'+p.idx.toFixed(2)+'</div>'+
+            '<div class="tp-card-idx-label">INDICE</div>'+
+          '</div>'+
+        '</div>'+
+        '<div class="tp-indices">'+
+          idxItem('Progressione',p.idxProg,p.valProg)+
+          idxItem('Offensivo',p.idxOff,p.valOff)+
+          idxItem('Difensivo',p.idxDif,p.valDif)+
+          idxItem('Tecnico',p.idxTec,p.valTec)+
+        '</div>'+
+        '<div class="tp-stats">'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.gol+'</div><div class="tp-stat-key">GOL</div></div>'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.assist+'</div><div class="tp-stat-key">ASSIST</div></div>'+
+          '<div class="tp-stat"><div class="tp-stat-val">'+p.idx.toFixed(2)+'</div><div class="tp-stat-key">IDX COMP.</div></div>'+
+        '</div>'+
+      '</div>';
+    container.innerHTML+=card;
+  });
+})();
+</script>
+<!-- ======================================================== -->
