@@ -8,31 +8,31 @@
   .pr-info-box{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dde2ee;border-radius:10px;padding:10px 14px;margin-bottom:12px;min-height:24px}
   .pr-info-flag{width:28px;height:19px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15);flex-shrink:0;display:none}
   .pr-info-flag img{width:100%;height:100%;object-fit:cover}
-  .pr-info-text{font-size:12px;color:#9aa0b8}
+  .pr-info-text{font-size:12px;color:#9aa0b8;line-height:1.4}
   .pr-info-text b{color:#1a1f36;font-size:13px}
-  .pr-legend{display:flex;gap:12px;margin-bottom:14px;justify-content:center;flex-wrap:wrap}
+  .pr-legend{display:flex;gap:10px;margin-bottom:14px;justify-content:center;flex-wrap:wrap}
   .pr-legend-item{display:flex;align-items:center;gap:4px;font-size:10px;color:#6b7a9e}
   .pr-legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-  .pr-row{display:grid;grid-template-columns:28px 26px 1fr 80px 36px 44px;align-items:center;gap:6px;padding:8px 4px;border-radius:8px;cursor:pointer;transition:background .15s}
+  .pr-section-label{font-size:10px;letter-spacing:2px;font-weight:700;color:#9aa0b8;padding:6px 4px 4px;}
+  .pr-row{display:grid;grid-template-columns:28px 26px 1fr 70px 36px 40px;align-items:center;gap:5px;padding:8px 4px;border-radius:8px;cursor:pointer;transition:background .15s}
   .pr-row:hover{background:#eef0f7}
-  .pr-rank{font-size:11px;font-weight:800;text-align:center}
-  .pr-flag{width:26px;height:18px;border-radius:3px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .pr-rank{font-size:11px;font-weight:800;text-align:center;flex-shrink:0}
+  .pr-flag{width:26px;height:18px;border-radius:3px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.15);flex-shrink:0}
   .pr-flag img{width:100%;height:100%;object-fit:cover}
-  .pr-info{overflow:hidden}
-  .pr-name{font-size:12px;font-weight:700;color:#1a1f36;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pr-info{overflow:hidden;min-width:0}
+  .pr-name{font-size:12px;font-weight:700;color:#1a1f36;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;gap:3px;flex-wrap:nowrap}
   .pr-detail{font-size:10px;color:#9aa0b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pr-bar-col{padding:2px 0}
+  .pr-bar-col{padding:2px 0;min-width:0}
   .pr-bar-wrap{background:#eef0f7;border-radius:3px;height:6px;overflow:hidden}
   .pr-bar{height:100%;border-radius:3px}
-  .pr-avg{font-size:12px;font-weight:800;text-align:right}
+  .pr-avg{font-size:12px;font-weight:800;text-align:right;white-space:nowrap}
   .pr-stat{font-size:10px;color:#9aa0b8;text-align:right;white-space:nowrap}
   .pr-footer{text-align:center;font-size:9px;letter-spacing:2px;color:#c0c6d8;margin-top:12px}
-  .pr-note{font-size:10px;color:#6b7a9e;background:#fff;border:1px solid #dde2ee;border-radius:8px;padding:8px 12px;margin-bottom:12px;line-height:1.5}
 </style>
 <div class="pr-wrap">
   <div class="pr-sitelabel">ORE15.IT · FIFA WORLD CUP 2026</div>
   <div class="pr-title">TOP 20 GIOCATORI · TURNI 1-2</div>
-  <div class="pr-sub">I 12 giocatori presenti in entrambi i turni sono inclusi automaticamente (valore = media) · gli altri 8 sono i migliori per indice singolo<br>Tocca una riga per i dettagli</div>
+  <div class="pr-sub">Tocca una riga per i dettagli</div>
 
   <div class="pr-info-box" id="pr-info">
     <div class="pr-info-flag" id="pr-info-flag"><img id="pr-info-img" src="" alt=""></div>
@@ -40,272 +40,274 @@
   </div>
 
   <div class="pr-legend">
-    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#7c3aed"></div>Podio</div>
-    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#059669"></div>Top 4-10</div>
-    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#0284c7"></div>Top 11-20</div>
-    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#7c3aed;opacity:.4"></div><span style="color:#7c3aed">2 turni</span> = presente in entrambi</div>
+    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#7c3aed"></div>Presenti tra i migliori in entrambi i turni</div>
+    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#059669"></div>Migliori singola presenza (top 3)</div>
+    <div class="pr-legend-item"><div class="pr-legend-dot" style="background:#0284c7"></div>Migliori singola presenza (4-8)</div>
   </div>
 
+  <div class="pr-section-label">PRESENTI IN ENTRAMBI I TURNI</div>
   <div id="pr-list">
-  <div class="pr-row" onclick="prSelect(this,'de','Deniz Undav','Germania','Prima punta',22.47,2,0,1)">
+  <div class="pr-row" onclick="prSelect(this,'fr','Kylian Mbappé','Francia','Prima punta',16.9,4,0,2)">
     <div class="pr-rank" style="color:#7c3aed">🥇</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/fr.png" alt="Francia"></div>
+    <div class="pr-info">
+      <div class="pr-name">Kylian Mbappé<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Francia · Prima punta</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:100%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">16.9</div>
+    <div class="pr-stat">⚽4</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'ar','Lionel Messi','Argentina','Mezzala',14.55,5,0,2)">
+    <div class="pr-rank" style="color:#7c3aed">🥈</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/ar.png" alt="Argentina"></div>
+    <div class="pr-info">
+      <div class="pr-name">Lionel Messi<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Argentina · Mezzala</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:86%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">14.6</div>
+    <div class="pr-stat">⚽5</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'br','Vinicius Jr.','Brasile','Ala',11.94,2,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">🥉</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/br.png" alt="Brasile"></div>
+    <div class="pr-info">
+      <div class="pr-name">Vinicius Jr.<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Brasile · Ala</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:71%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">11.9</div>
+    <div class="pr-stat">⚽2 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'no','Erling Haaland','Norvegia','Prima punta',11.05,4,0,2)">
+    <div class="pr-rank" style="color:#7c3aed">4</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/no.png" alt="Norvegia"></div>
+    <div class="pr-info">
+      <div class="pr-name">Erling Haaland<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Norvegia · Prima punta</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:65%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">11.1</div>
+    <div class="pr-stat">⚽4</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'de','Felix Nmecha','Germania','Mediano',11.03,1,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">5</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></div>
+    <div class="pr-info">
+      <div class="pr-name">Felix Nmecha<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Germania · Mediano</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:65%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">11.0</div>
+    <div class="pr-stat">⚽1 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'jp','Keito Nakamura','Giappone','Ala',9.04,1,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">6</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/jp.png" alt="Giappone"></div>
+    <div class="pr-info">
+      <div class="pr-name">Keito Nakamura<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Giappone · Ala</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:53%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">9.0</div>
+    <div class="pr-stat">⚽1 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'uy','Maximiliano Araujo','Uruguay','Terzino',8.71,2,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">7</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/uy.png" alt="Uruguay"></div>
+    <div class="pr-info">
+      <div class="pr-name">Maximiliano Araujo<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Uruguay · Terzino</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:52%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">8.7</div>
+    <div class="pr-stat">⚽2 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'py','Julio Enciso','Paraguay','Trequartista',8.62,0,2,2)">
+    <div class="pr-rank" style="color:#7c3aed">8</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/py.png" alt="Paraguay"></div>
+    <div class="pr-info">
+      <div class="pr-name">Julio Enciso<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Paraguay · Trequartista</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:51%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">8.6</div>
+    <div class="pr-stat">⚽0 🅰️2</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'ca','Richie Laryea','Canada','Terzino',8.35,0,0,2)">
+    <div class="pr-rank" style="color:#7c3aed">9</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/ca.png" alt="Canada"></div>
+    <div class="pr-info">
+      <div class="pr-name">Richie Laryea<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Canada · Terzino</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:49%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">8.3</div>
+    <div class="pr-stat">⚽0</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'us','Alexander Freeman','USA','Terzino',7.19,1,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">10</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/us.png" alt="USA"></div>
+    <div class="pr-info">
+      <div class="pr-name">Alexander Freeman<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">USA · Terzino</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:43%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">7.2</div>
+    <div class="pr-stat">⚽1 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'kr','Kang-in Lee','Corea del Sud','Trequartista',6.04,0,1,2)">
+    <div class="pr-rank" style="color:#7c3aed">11</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sud"></div>
+    <div class="pr-info">
+      <div class="pr-name">Kang-in Lee<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Corea del Sud · Trequartista</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:36%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">6.0</div>
+    <div class="pr-stat">⚽0 🅰️1</div>
+  </div>
+  <div class="pr-row" onclick="prSelect(this,'cz','Ladislav Krejci','Rep.Ceca','Difensore centrale',5.71,1,0,2)">
+    <div class="pr-rank" style="color:#7c3aed">12</div>
+    <div class="pr-flag"><img src="https://flagcdn.com/w40/cz.png" alt="Rep.Ceca"></div>
+    <div class="pr-info">
+      <div class="pr-name">Ladislav Krejci<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700;white-space:nowrap">2 turni</span></div>
+      <div class="pr-detail">Rep.Ceca · Difensore centrale</div>
+    </div>
+    <div class="pr-bar-col">
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:34%;background:#7c3aed"></div></div>
+    </div>
+    <div class="pr-avg" style="color:#7c3aed">5.7</div>
+    <div class="pr-stat">⚽1</div>
+  </div>
+  
+  <div style="height:1px;background:#dde2ee;margin:8px 0;"></div>
+  <div class="pr-row" onclick="prSelect(this,'de','Deniz Undav','Germania','Prima punta',22.47,2,0,1)">
+    <div class="pr-rank" style="color:#059669">13</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></div>
     <div class="pr-info">
       <div class="pr-name">Deniz Undav</div>
       <div class="pr-detail">Germania · Prima punta</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:100%;background:#7c3aed"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:133%;background:#059669"></div></div>
     </div>
-    <div class="pr-avg" style="color:#7c3aed">22.5</div>
+    <div class="pr-avg" style="color:#059669">22.5</div>
     <div class="pr-stat">⚽2</div>
   </div>
   <div class="pr-row" onclick="prSelect(this,'nl','Cody Gakpo','Olanda','Ala',18.94,2,1,1)">
-    <div class="pr-rank" style="color:#7c3aed">🥈</div>
+    <div class="pr-rank" style="color:#059669">14</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/nl.png" alt="Olanda"></div>
     <div class="pr-info">
       <div class="pr-name">Cody Gakpo</div>
       <div class="pr-detail">Olanda · Ala</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:84%;background:#7c3aed"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:112%;background:#059669"></div></div>
     </div>
-    <div class="pr-avg" style="color:#7c3aed">18.9</div>
+    <div class="pr-avg" style="color:#059669">18.9</div>
     <div class="pr-stat">⚽2 🅰️1</div>
   </div>
   <div class="pr-row" onclick="prSelect(this,'ca','Jonathan David','Canada','Prima punta',18.36,3,0,1)">
-    <div class="pr-rank" style="color:#7c3aed">🥉</div>
+    <div class="pr-rank" style="color:#059669">15</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/ca.png" alt="Canada"></div>
     <div class="pr-info">
       <div class="pr-name">Jonathan David</div>
       <div class="pr-detail">Canada · Prima punta</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:82%;background:#7c3aed"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:109%;background:#059669"></div></div>
     </div>
-    <div class="pr-avg" style="color:#7c3aed">18.4</div>
+    <div class="pr-avg" style="color:#059669">18.4</div>
     <div class="pr-stat">⚽3</div>
   </div>
-  <div class="pr-row" onclick="prSelect(this,'fr','Kylian Mbappé','Francia','Prima punta',16.9,4,0,2)">
-    <div class="pr-rank" style="color:#059669">4</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/fr.png" alt="Francia"></div>
-    <div class="pr-info">
-      <div class="pr-name">Kylian Mbappé<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Francia · Prima punta</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:75%;background:#059669"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#059669">16.9</div>
-    <div class="pr-stat">⚽4</div>
-  </div>
   <div class="pr-row" onclick="prSelect(this,'ci','Yan Diomande','Costa d\' Avorio','Ala',16.78,0,0,1)">
-    <div class="pr-rank" style="color:#059669">5</div>
+    <div class="pr-rank" style="color:#0284c7">16</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/ci.png" alt="Costa d' Avorio"></div>
     <div class="pr-info">
       <div class="pr-name">Yan Diomande</div>
       <div class="pr-detail">Costa d' Avorio · Ala</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:75%;background:#059669"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:99%;background:#0284c7"></div></div>
     </div>
-    <div class="pr-avg" style="color:#059669">16.8</div>
+    <div class="pr-avg" style="color:#0284c7">16.8</div>
     <div class="pr-stat">⚽0</div>
   </div>
   <div class="pr-row" onclick="prSelect(this,'gb-eng','Noni Madueke','Inghilterra','Ala',15.81,0,0,1)">
-    <div class="pr-rank" style="color:#059669">6</div>
+    <div class="pr-rank" style="color:#0284c7">17</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/gb-eng.png" alt="Inghilterra"></div>
     <div class="pr-info">
       <div class="pr-name">Noni Madueke</div>
       <div class="pr-detail">Inghilterra · Ala</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:70%;background:#059669"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:94%;background:#0284c7"></div></div>
     </div>
-    <div class="pr-avg" style="color:#059669">15.8</div>
+    <div class="pr-avg" style="color:#0284c7">15.8</div>
     <div class="pr-stat">⚽0</div>
   </div>
   <div class="pr-row" onclick="prSelect(this,'nz','Elijah Just','Nuova Zelanda','Ala',14.76,2,0,1)">
-    <div class="pr-rank" style="color:#059669">7</div>
+    <div class="pr-rank" style="color:#0284c7">18</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/nz.png" alt="Nuova Zelanda"></div>
     <div class="pr-info">
       <div class="pr-name">Elijah Just</div>
       <div class="pr-detail">Nuova Zelanda · Ala</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:66%;background:#059669"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:87%;background:#0284c7"></div></div>
     </div>
-    <div class="pr-avg" style="color:#059669">14.8</div>
+    <div class="pr-avg" style="color:#0284c7">14.8</div>
     <div class="pr-stat">⚽2</div>
   </div>
-  <div class="pr-row" onclick="prSelect(this,'ar','Lionel Messi','Argentina','Mezzala',14.55,5,0,2)">
-    <div class="pr-rank" style="color:#059669">8</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/ar.png" alt="Argentina"></div>
-    <div class="pr-info">
-      <div class="pr-name">Lionel Messi<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Argentina · Mezzala</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:65%;background:#059669"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#059669">14.6</div>
-    <div class="pr-stat">⚽5</div>
-  </div>
   <div class="pr-row" onclick="prSelect(this,'br','Matheus Cunha','Brasile','Prima punta',13.43,2,0,1)">
-    <div class="pr-rank" style="color:#059669">9</div>
+    <div class="pr-rank" style="color:#0284c7">19</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/br.png" alt="Brasile"></div>
     <div class="pr-info">
       <div class="pr-name">Matheus Cunha</div>
       <div class="pr-detail">Brasile · Prima punta</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:60%;background:#059669"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:79%;background:#0284c7"></div></div>
     </div>
-    <div class="pr-avg" style="color:#059669">13.4</div>
+    <div class="pr-avg" style="color:#0284c7">13.4</div>
     <div class="pr-stat">⚽2</div>
   </div>
   <div class="pr-row" onclick="prSelect(this,'pt','Cristiano Ronaldo','Portogallo','Prima punta',12.87,2,0,1)">
-    <div class="pr-rank" style="color:#059669">10</div>
+    <div class="pr-rank" style="color:#0284c7">20</div>
     <div class="pr-flag"><img src="https://flagcdn.com/w40/pt.png" alt="Portogallo"></div>
     <div class="pr-info">
       <div class="pr-name">Cristiano Ronaldo</div>
       <div class="pr-detail">Portogallo · Prima punta</div>
     </div>
     <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:57%;background:#059669"></div></div>
+      <div class="pr-bar-wrap"><div class="pr-bar" style="width:76%;background:#0284c7"></div></div>
     </div>
-    <div class="pr-avg" style="color:#059669">12.9</div>
+    <div class="pr-avg" style="color:#0284c7">12.9</div>
     <div class="pr-stat">⚽2</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'br','Vinicius Jr.','Brasile','Ala',11.94,2,1,2)">
-    <div class="pr-rank" style="color:#0284c7">11</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/br.png" alt="Brasile"></div>
-    <div class="pr-info">
-      <div class="pr-name">Vinicius Jr.<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Brasile · Ala</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:53%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">11.9</div>
-    <div class="pr-stat">⚽2 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'no','Erling Haaland','Norvegia','Prima punta',11.05,4,0,2)">
-    <div class="pr-rank" style="color:#0284c7">12</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/no.png" alt="Norvegia"></div>
-    <div class="pr-info">
-      <div class="pr-name">Erling Haaland<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Norvegia · Prima punta</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:49%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">11.1</div>
-    <div class="pr-stat">⚽4</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'de','Felix Nmecha','Germania','Mediano',11.03,1,1,2)">
-    <div class="pr-rank" style="color:#0284c7">13</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></div>
-    <div class="pr-info">
-      <div class="pr-name">Felix Nmecha<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Germania · Mediano</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:49%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">11.0</div>
-    <div class="pr-stat">⚽1 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'jp','Keito Nakamura','Giappone','Ala',9.04,1,1,2)">
-    <div class="pr-rank" style="color:#0284c7">14</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/jp.png" alt="Giappone"></div>
-    <div class="pr-info">
-      <div class="pr-name">Keito Nakamura<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Giappone · Ala</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:40%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">9.0</div>
-    <div class="pr-stat">⚽1 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'uy','Maximiliano Araujo','Uruguay','Terzino',8.71,2,1,2)">
-    <div class="pr-rank" style="color:#0284c7">15</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/uy.png" alt="Uruguay"></div>
-    <div class="pr-info">
-      <div class="pr-name">Maximiliano Araujo<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Uruguay · Terzino</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:39%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">8.7</div>
-    <div class="pr-stat">⚽2 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'py','Julio Enciso','Paraguay','Trequartista',8.62,0,2,2)">
-    <div class="pr-rank" style="color:#0284c7">16</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/py.png" alt="Paraguay"></div>
-    <div class="pr-info">
-      <div class="pr-name">Julio Enciso<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Paraguay · Trequartista</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:38%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">8.6</div>
-    <div class="pr-stat">⚽0 🅰️2</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'ca','Richie Laryea','Canada','Terzino',8.35,0,0,2)">
-    <div class="pr-rank" style="color:#0284c7">17</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/ca.png" alt="Canada"></div>
-    <div class="pr-info">
-      <div class="pr-name">Richie Laryea<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Canada · Terzino</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:37%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">8.3</div>
-    <div class="pr-stat">⚽0</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'us','Alexander Freeman','USA','Terzino',7.19,1,1,2)">
-    <div class="pr-rank" style="color:#0284c7">18</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/us.png" alt="USA"></div>
-    <div class="pr-info">
-      <div class="pr-name">Alexander Freeman<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">USA · Terzino</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:32%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">7.2</div>
-    <div class="pr-stat">⚽1 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'kr','Kang-in Lee','Corea del Sud','Trequartista',6.04,0,1,2)">
-    <div class="pr-rank" style="color:#0284c7">19</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sud"></div>
-    <div class="pr-info">
-      <div class="pr-name">Kang-in Lee<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Corea del Sud · Trequartista</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:27%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">6.0</div>
-    <div class="pr-stat">⚽0 🅰️1</div>
-  </div>
-  <div class="pr-row" onclick="prSelect(this,'cz','Ladislav Krejci','Rep.Ceca','Difensore centrale',5.71,1,0,2)">
-    <div class="pr-rank" style="color:#0284c7">20</div>
-    <div class="pr-flag"><img src="https://flagcdn.com/w40/cz.png" alt="Rep.Ceca"></div>
-    <div class="pr-info">
-      <div class="pr-name">Ladislav Krejci<span style="font-size:9px;background:#f5f3ff;color:#7c3aed;padding:1px 5px;border-radius:10px;margin-left:4px;font-weight:700">2 turni</span></div>
-      <div class="pr-detail">Rep.Ceca · Difensore centrale</div>
-    </div>
-    <div class="pr-bar-col">
-      <div class="pr-bar-wrap"><div class="pr-bar" style="width:25%;background:#0284c7"></div></div>
-    </div>
-    <div class="pr-avg" style="color:#0284c7">5.7</div>
-    <div class="pr-stat">⚽1</div>
   </div>  </div>
   <div class="pr-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
 </div>
@@ -314,7 +316,7 @@ function prSelect(el, flag, name, team, role, idx, gol, assist, partite) {
   document.getElementById('pr-info-img').src = 'https://flagcdn.com/w80/' + flag + '.png';
   document.getElementById('pr-info-flag').style.display = 'block';
   var stats = 'Gol: ' + gol + (assist > 0 ? ' · Assist: ' + assist : '');
-  var note = partite > 1 ? ' · Media su 2 turni' : '';
+  var note = partite > 1 ? ' · Presente tra i migliori in entrambi i turni' : '';
   document.getElementById('pr-info-text').innerHTML = '<b>' + name + '</b> (' + team + ') — ' + role + note + ' — Indice: ' + idx.toFixed(2) + ' — ' + stats;
   document.querySelectorAll('.pr-row').forEach(function(r) { r.style.background = ''; });
   el.style.background = '#eef0f7';
