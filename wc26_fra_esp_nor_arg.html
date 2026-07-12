@@ -1,0 +1,365 @@
+<div style="overflow:hidden">
+<!-- mundial_fra_mar -->
+<style>
+  .mw-wrap{font-family:"Segoe UI",Arial,sans-serif;background:#f4f6f9;border-radius:16px;padding:20px 16px;max-width:500px;margin:20px auto;color:#1a1f36;box-sizing:border-box;border:1px solid #dde2ee;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+  .mw-wrap *{box-sizing:border-box}
+  .mw-sitelabel{font-size:10px;letter-spacing:4px;color:#9aa0b8;font-weight:700;text-align:center;margin-bottom:4px}
+  .mw-competition{font-size:11px;color:#9aa0b8;text-align:center;margin-bottom:16px}
+  .mw-scoreboard{padding:16px;background:#fff;border-radius:12px;border:1px solid #dde2ee;margin-bottom:20px}
+  .mw-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-bottom:12px}
+  .mw-team{text-align:center}
+  .mw-flag{width:52px;height:36px;border-radius:4px;margin:0 auto 8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+  .mw-flag img{width:100%;height:100%;object-fit:cover}
+  .mw-team-name{font-size:14px;font-weight:800;color:#1a1f36;margin-bottom:2px}
+  .mw-team-code{font-size:11px;color:#9aa0b8}
+  .mw-score{font-size:36px;font-weight:800;color:#1a1f36;letter-spacing:3px;text-align:center}
+  .mw-score-label{font-size:10px;color:#9aa0b8;letter-spacing:2px;margin-top:3px;text-align:center}
+  .mw-merit{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 14px;border-radius:20px;margin:0 auto;width:fit-content}
+  .mw-merit-text{font-size:12px;font-weight:700;letter-spacing:.5px}
+  .mw-divider{height:1px;background:#eef0f7;margin:0 0 16px}
+  .mw-idx-title{font-size:10px;letter-spacing:3px;color:#9aa0b8;font-weight:700;text-align:center;margin-bottom:14px}
+  .mw-idx-row{margin-bottom:14px}
+  .mw-bar{display:flex;height:6px;gap:2px;align-items:center}
+  .mw-bar-left{flex:1;display:flex;justify-content:flex-end}
+  .mw-bar-right{flex:1;display:flex;justify-content:flex-start}
+  .mw-bar-fill{height:100%;border-radius:3px}
+  .mw-bar-sep{width:2px;height:100%;background:#dde2ee;border-radius:1px;flex-shrink:0}
+  .mw-tot{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+  .mw-tot-card{text-align:center;padding:14px;border-radius:12px}
+  .mw-tot-flag{width:40px;height:28px;border-radius:3px;margin:0 auto 6px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+  .mw-tot-flag img{width:100%;height:100%;object-fit:cover}
+  .mw-tot-name{font-size:11px;color:#9aa0b8;margin-bottom:6px}
+  .mw-tot-val{font-size:28px;font-weight:800}
+  .mw-tot-bar-wrap{height:5px;background:#eef0f7;border-radius:3px;margin-top:8px}
+  .mw-tot-bar{height:100%;border-radius:3px}
+  .mw-footer{text-align:center;font-size:9px;letter-spacing:2px;color:#c0c6d8;margin-top:14px}
+</style>
+<div class="mw-wrap" id="wrap-mundial_fra_mar">
+  <div class="mw-sitelabel">ORE15.IT · ANALISI PARTITA</div>
+  <div class="mw-scoreboard">
+    <div class="mw-teams">
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/fr.png" alt="Francia"></div>
+        <div class="mw-team-name">Francia</div>
+        <div class="mw-team-code">FRA</div>
+      </div>
+      <div>
+        <div class="mw-score">2 – 0</div>
+        <div class="mw-score-label">FINALE</div>
+      </div>
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/ma.png" alt="Marocco"></div>
+        <div class="mw-team-name">Marocco</div>
+        <div class="mw-team-code">MAR</div>
+      </div>
+    </div>
+    <div class="mw-merit" style="background:#F3EBFD;border:1px solid #7c3aed22">
+      <span>⚡</span>
+      <span class="mw-merit-text" style="color:#7c3aed">Dominio totale Francia</span>
+    </div>
+  </div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICI EFFICACIA ORE15</div>
+  <div id="mw-idx-mundial_fra_mar"></div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICE TOTALE EFFICACIA</div>
+  <div class="mw-tot" id="mw-tot-mundial_fra_mar"></div>
+  <div class="mw-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
+</div>
+<script>
+(function(){
+  var MC='#002654',RC='#C1272D',MBG='#EAF1FB',RBG='#FBEAEA';
+  var IDX=[{"label": "Attacco", "v1": 34.6, "v2": 11.5}, {"label": "Difesa", "v1": 35.2, "v2": -14.3}, {"label": "Possesso", "v1": 28.8, "v2": 31.2}, {"label": "Passaggi", "v1": 40.1, "v2": 34.7}, {"label": "Disciplina", "v1": -2.0, "v2": -3.1}, {"label": "Et\u00e0 media", "v1": 27.2, "v2": 25.5}];
+  var TOT={v1:16.0,v2:4.2};
+  var F1='fr',F2='ma',N1='Francia',N2='Marocco';
+  var ic=document.getElementById('mw-idx-mundial_fra_mar');
+  IDX.forEach(function(idx){
+    var w1=idx.v1>=idx.v2;
+    ic.innerHTML+=
+      '<div class="mw-idx-row">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'+
+          '<div style="min-width:80px;text-align:left">'+
+            '<span style="font-size:'+(w1?'22px':'14px')+';font-weight:800;color:'+(w1?MC:'#c0c6d8')+'">'+idx.v1.toFixed(1)+'</span>'+
+            (w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+MBG+';color:'+MC+';margin-left:3px;vertical-align:middle">↑</span>':'')+
+          '</div>'+
+          '<span style="font-size:11px;color:#9aa0b8;flex:1;text-align:center">'+idx.label+'</span>'+
+          '<div style="min-width:80px;text-align:right">'+
+            (!w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+RBG+';color:'+RC+';margin-right:3px;vertical-align:middle">↑</span>':'')+
+            '<span style="font-size:'+(!w1?'22px':'14px')+';font-weight:800;color:'+(!w1?RC:'#c0c6d8')+'">'+idx.v2.toFixed(1)+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mw-bar">'+
+          '<div class="mw-bar-left"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v1)+'%;background:'+(w1?MC:'#e8eaef')+'"></div></div>'+
+          '<div class="mw-bar-sep"></div>'+
+          '<div class="mw-bar-right"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v2)+'%;background:'+(!w1?RC:'#e8eaef')+'"></div></div>'+
+        '</div>'+
+      '</div>';
+  });
+  var maxA=Math.max(Math.abs(TOT.v1),Math.abs(TOT.v2))||1;
+  var w1=Math.round(Math.abs(TOT.v1)/maxA*100);
+  var w2=Math.round(Math.abs(TOT.v2)/maxA*100);
+  var mw=TOT.v1>=TOT.v2;
+  document.getElementById('mw-tot-mundial_fra_mar').innerHTML=
+    '<div class="mw-tot-card" style="background:'+(mw?MBG:'#eef0f7')+';border:'+(mw?'1.5px solid '+MC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F1+'.png"></div>'+
+      '<div class="mw-tot-name">'+N1+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(mw?MC:'#1a1f36')+'">'+TOT.v1.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w1+'%;background:'+MC+'"></div></div>'+
+    '</div>'+
+    '<div class="mw-tot-card" style="background:'+(!mw?RBG:'#eef0f7')+';border:'+(!mw?'1.5px solid '+RC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F2+'.png"></div>'+
+      '<div class="mw-tot-name">'+N2+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(!mw?RC:'#1a1f36')+'">'+TOT.v2.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w2+'%;background:'+RC+'"></div></div>'+
+    '</div>';
+})();
+</script></div>
+<hr style="border:none;height:1px;background:#dde2ee;margin:30px 0;max-width:500px;margin-left:auto;margin-right:auto">
+<div style="overflow:hidden">
+<!-- mundial_esp_bel -->
+<div class="mw-wrap" id="wrap-mundial_esp_bel">
+  <div class="mw-sitelabel">ORE15.IT · ANALISI PARTITA</div>
+  <div class="mw-scoreboard">
+    <div class="mw-teams">
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/es.png" alt="Spagna"></div>
+        <div class="mw-team-name">Spagna</div>
+        <div class="mw-team-code">ESP</div>
+      </div>
+      <div>
+        <div class="mw-score">2 – 1</div>
+        <div class="mw-score-label">FINALE</div>
+      </div>
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/be.png" alt="Belgio"></div>
+        <div class="mw-team-name">Belgio</div>
+        <div class="mw-team-code">BEL</div>
+      </div>
+    </div>
+    <div class="mw-merit" style="background:#E6F1FB;border:1px solid #0284c722">
+      <span>⚡</span>
+      <span class="mw-merit-text" style="color:#0284c7">Netta superiorità Spagna</span>
+    </div>
+  </div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICI EFFICACIA ORE15</div>
+  <div id="mw-idx-mundial_esp_bel"></div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICE TOTALE EFFICACIA</div>
+  <div class="mw-tot" id="mw-tot-mundial_esp_bel"></div>
+  <div class="mw-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
+</div>
+<script>
+(function(){
+  var MC='#AA151B',RC='#000000',MBG='#FFF0F0',RBG='#F5F5F5';
+  var IDX=[{"label": "Attacco", "v1": 41.9, "v2": 24.8}, {"label": "Difesa", "v1": 22.4, "v2": 9.7}, {"label": "Possesso", "v1": 40.8, "v2": 19.2}, {"label": "Passaggi", "v1": 39.2, "v2": 32.6}, {"label": "Disciplina", "v1": -3.6, "v2": -4.6}, {"label": "Et\u00e0 media", "v1": 26.5, "v2": 28.9}];
+  var TOT={v1:15.7,v2:8.5};
+  var F1='es',F2='be',N1='Spagna',N2='Belgio';
+  var ic=document.getElementById('mw-idx-mundial_esp_bel');
+  IDX.forEach(function(idx){
+    var w1=idx.v1>=idx.v2;
+    ic.innerHTML+=
+      '<div class="mw-idx-row">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'+
+          '<div style="min-width:80px;text-align:left">'+
+            '<span style="font-size:'+(w1?'22px':'14px')+';font-weight:800;color:'+(w1?MC:'#c0c6d8')+'">'+idx.v1.toFixed(1)+'</span>'+
+            (w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+MBG+';color:'+MC+';margin-left:3px;vertical-align:middle">↑</span>':'')+
+          '</div>'+
+          '<span style="font-size:11px;color:#9aa0b8;flex:1;text-align:center">'+idx.label+'</span>'+
+          '<div style="min-width:80px;text-align:right">'+
+            (!w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+RBG+';color:'+RC+';margin-right:3px;vertical-align:middle">↑</span>':'')+
+            '<span style="font-size:'+(!w1?'22px':'14px')+';font-weight:800;color:'+(!w1?RC:'#c0c6d8')+'">'+idx.v2.toFixed(1)+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mw-bar">'+
+          '<div class="mw-bar-left"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v1)+'%;background:'+(w1?MC:'#e8eaef')+'"></div></div>'+
+          '<div class="mw-bar-sep"></div>'+
+          '<div class="mw-bar-right"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v2)+'%;background:'+(!w1?RC:'#e8eaef')+'"></div></div>'+
+        '</div>'+
+      '</div>';
+  });
+  var maxA=Math.max(Math.abs(TOT.v1),Math.abs(TOT.v2))||1;
+  var w1=Math.round(Math.abs(TOT.v1)/maxA*100);
+  var w2=Math.round(Math.abs(TOT.v2)/maxA*100);
+  var mw=TOT.v1>=TOT.v2;
+  document.getElementById('mw-tot-mundial_esp_bel').innerHTML=
+    '<div class="mw-tot-card" style="background:'+(mw?MBG:'#eef0f7')+';border:'+(mw?'1.5px solid '+MC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F1+'.png"></div>'+
+      '<div class="mw-tot-name">'+N1+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(mw?MC:'#1a1f36')+'">'+TOT.v1.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w1+'%;background:'+MC+'"></div></div>'+
+    '</div>'+
+    '<div class="mw-tot-card" style="background:'+(!mw?RBG:'#eef0f7')+';border:'+(!mw?'1.5px solid '+RC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F2+'.png"></div>'+
+      '<div class="mw-tot-name">'+N2+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(!mw?RC:'#1a1f36')+'">'+TOT.v2.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w2+'%;background:'+RC+'"></div></div>'+
+    '</div>';
+})();
+</script></div>
+<hr style="border:none;height:1px;background:#dde2ee;margin:30px 0;max-width:500px;margin-left:auto;margin-right:auto">
+<div style="overflow:hidden">
+<!-- mundial_nor_eng -->
+<div class="mw-wrap" id="wrap-mundial_nor_eng">
+  <div class="mw-sitelabel">ORE15.IT · ANALISI PARTITA</div>
+  <div class="mw-scoreboard">
+    <div class="mw-teams">
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/no.png" alt="Norvegia"></div>
+        <div class="mw-team-name">Norvegia</div>
+        <div class="mw-team-code">NOR</div>
+      </div>
+      <div>
+        <div class="mw-score">1 – 2 (d.t.s.)</div>
+        <div class="mw-score-label">FINALE</div>
+      </div>
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/gb-eng.png" alt="Inghilterra"></div>
+        <div class="mw-team-name">Inghilterra</div>
+        <div class="mw-team-code">ENG</div>
+      </div>
+    </div>
+    <div class="mw-merit" style="background:#FEF3D9;border:1px solid #b4530922">
+      <span>⚡</span>
+      <span class="mw-merit-text" style="color:#b45309">Sconfitta immeritata Norvegia</span>
+    </div>
+  </div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICI EFFICACIA ORE15</div>
+  <div id="mw-idx-mundial_nor_eng"></div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICE TOTALE EFFICACIA</div>
+  <div class="mw-tot" id="mw-tot-mundial_nor_eng"></div>
+  <div class="mw-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
+</div>
+<script>
+(function(){
+  var MC='#EF2B2D',RC='#CE1124',MBG='#FDECEA',RBG='#FDECEA';
+  var IDX=[{"label": "Attacco", "v1": 30.0, "v2": 40.0}, {"label": "Difesa", "v1": 21.3, "v2": 11.3}, {"label": "Possesso", "v1": 28.8, "v2": 31.2}, {"label": "Passaggi", "v1": 35.5, "v2": 42.1}, {"label": "Disciplina", "v1": -2.5, "v2": -1.6}, {"label": "Et\u00e0 media", "v1": 27.5, "v2": 26.5}];
+  var TOT={v1:12.6,v2:13.3};
+  var F1='no',F2='gb-eng',N1='Norvegia',N2='Inghilterra';
+  var ic=document.getElementById('mw-idx-mundial_nor_eng');
+  IDX.forEach(function(idx){
+    var w1=idx.v1>=idx.v2;
+    ic.innerHTML+=
+      '<div class="mw-idx-row">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'+
+          '<div style="min-width:80px;text-align:left">'+
+            '<span style="font-size:'+(w1?'22px':'14px')+';font-weight:800;color:'+(w1?MC:'#c0c6d8')+'">'+idx.v1.toFixed(1)+'</span>'+
+            (w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+MBG+';color:'+MC+';margin-left:3px;vertical-align:middle">↑</span>':'')+
+          '</div>'+
+          '<span style="font-size:11px;color:#9aa0b8;flex:1;text-align:center">'+idx.label+'</span>'+
+          '<div style="min-width:80px;text-align:right">'+
+            (!w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+RBG+';color:'+RC+';margin-right:3px;vertical-align:middle">↑</span>':'')+
+            '<span style="font-size:'+(!w1?'22px':'14px')+';font-weight:800;color:'+(!w1?RC:'#c0c6d8')+'">'+idx.v2.toFixed(1)+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mw-bar">'+
+          '<div class="mw-bar-left"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v1)+'%;background:'+(w1?MC:'#e8eaef')+'"></div></div>'+
+          '<div class="mw-bar-sep"></div>'+
+          '<div class="mw-bar-right"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v2)+'%;background:'+(!w1?RC:'#e8eaef')+'"></div></div>'+
+        '</div>'+
+      '</div>';
+  });
+  var maxA=Math.max(Math.abs(TOT.v1),Math.abs(TOT.v2))||1;
+  var w1=Math.round(Math.abs(TOT.v1)/maxA*100);
+  var w2=Math.round(Math.abs(TOT.v2)/maxA*100);
+  var mw=TOT.v1>=TOT.v2;
+  document.getElementById('mw-tot-mundial_nor_eng').innerHTML=
+    '<div class="mw-tot-card" style="background:'+(mw?MBG:'#eef0f7')+';border:'+(mw?'1.5px solid '+MC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F1+'.png"></div>'+
+      '<div class="mw-tot-name">'+N1+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(mw?MC:'#1a1f36')+'">'+TOT.v1.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w1+'%;background:'+MC+'"></div></div>'+
+    '</div>'+
+    '<div class="mw-tot-card" style="background:'+(!mw?RBG:'#eef0f7')+';border:'+(!mw?'1.5px solid '+RC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F2+'.png"></div>'+
+      '<div class="mw-tot-name">'+N2+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(!mw?RC:'#1a1f36')+'">'+TOT.v2.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w2+'%;background:'+RC+'"></div></div>'+
+    '</div>';
+})();
+</script></div>
+<hr style="border:none;height:1px;background:#dde2ee;margin:30px 0;max-width:500px;margin-left:auto;margin-right:auto">
+<div style="overflow:hidden">
+<!-- mundial_arg_sui -->
+<div class="mw-wrap" id="wrap-mundial_arg_sui">
+  <div class="mw-sitelabel">ORE15.IT · ANALISI PARTITA</div>
+  <div class="mw-scoreboard">
+    <div class="mw-teams">
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/ar.png" alt="Argentina"></div>
+        <div class="mw-team-name">Argentina</div>
+        <div class="mw-team-code">ARG</div>
+      </div>
+      <div>
+        <div class="mw-score">3 – 1 (d.t.s.)</div>
+        <div class="mw-score-label">FINALE</div>
+      </div>
+      <div class="mw-team">
+        <div class="mw-flag"><img src="https://flagcdn.com/w80/ch.png" alt="Svizzera"></div>
+        <div class="mw-team-name">Svizzera</div>
+        <div class="mw-team-code">SUI</div>
+      </div>
+    </div>
+    <div class="mw-merit" style="background:#E6F1FB;border:1px solid #0284c722">
+      <span>⚡</span>
+      <span class="mw-merit-text" style="color:#0284c7">Netta superiorità Argentina</span>
+    </div>
+  </div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICI EFFICACIA ORE15</div>
+  <div id="mw-idx-mundial_arg_sui"></div>
+  <div class="mw-divider"></div>
+  <div class="mw-idx-title">INDICE TOTALE EFFICACIA</div>
+  <div class="mw-tot" id="mw-tot-mundial_arg_sui"></div>
+  <div class="mw-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
+</div>
+<script>
+(function(){
+  var MC='#75AADB',RC='#D52B1E',MBG='#EAF4FB',RBG='#FDECEA';
+  var IDX=[{"label": "Attacco", "v1": 46.9, "v2": 31.3}, {"label": "Difesa", "v1": 12.0, "v2": -10.2}, {"label": "Possesso", "v1": 35.4, "v2": 24.6}, {"label": "Passaggi", "v1": 40.0, "v2": 34.7}, {"label": "Disciplina", "v1": -4.3, "v2": -6.6}, {"label": "Et\u00e0 media", "v1": 30.1, "v2": 29.4}];
+  var TOT={v1:13.8,v2:6.5};
+  var F1='ar',F2='ch',N1='Argentina',N2='Svizzera';
+  var ic=document.getElementById('mw-idx-mundial_arg_sui');
+  IDX.forEach(function(idx){
+    var w1=idx.v1>=idx.v2;
+    ic.innerHTML+=
+      '<div class="mw-idx-row">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'+
+          '<div style="min-width:80px;text-align:left">'+
+            '<span style="font-size:'+(w1?'22px':'14px')+';font-weight:800;color:'+(w1?MC:'#c0c6d8')+'">'+idx.v1.toFixed(1)+'</span>'+
+            (w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+MBG+';color:'+MC+';margin-left:3px;vertical-align:middle">↑</span>':'')+
+          '</div>'+
+          '<span style="font-size:11px;color:#9aa0b8;flex:1;text-align:center">'+idx.label+'</span>'+
+          '<div style="min-width:80px;text-align:right">'+
+            (!w1?'<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:20px;font-weight:700;background:'+RBG+';color:'+RC+';margin-right:3px;vertical-align:middle">↑</span>':'')+
+            '<span style="font-size:'+(!w1?'22px':'14px')+';font-weight:800;color:'+(!w1?RC:'#c0c6d8')+'">'+idx.v2.toFixed(1)+'</span>'+
+          '</div>'+
+        '</div>'+
+        '<div class="mw-bar">'+
+          '<div class="mw-bar-left"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v1)+'%;background:'+(w1?MC:'#e8eaef')+'"></div></div>'+
+          '<div class="mw-bar-sep"></div>'+
+          '<div class="mw-bar-right"><div class="mw-bar-fill" style="width:'+Math.max(0,idx.v2)+'%;background:'+(!w1?RC:'#e8eaef')+'"></div></div>'+
+        '</div>'+
+      '</div>';
+  });
+  var maxA=Math.max(Math.abs(TOT.v1),Math.abs(TOT.v2))||1;
+  var w1=Math.round(Math.abs(TOT.v1)/maxA*100);
+  var w2=Math.round(Math.abs(TOT.v2)/maxA*100);
+  var mw=TOT.v1>=TOT.v2;
+  document.getElementById('mw-tot-mundial_arg_sui').innerHTML=
+    '<div class="mw-tot-card" style="background:'+(mw?MBG:'#eef0f7')+';border:'+(mw?'1.5px solid '+MC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F1+'.png"></div>'+
+      '<div class="mw-tot-name">'+N1+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(mw?MC:'#1a1f36')+'">'+TOT.v1.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w1+'%;background:'+MC+'"></div></div>'+
+    '</div>'+
+    '<div class="mw-tot-card" style="background:'+(!mw?RBG:'#eef0f7')+';border:'+(!mw?'1.5px solid '+RC:'1px solid #dde2ee')+'">'+
+      '<div class="mw-tot-flag"><img src="https://flagcdn.com/w80/'+F2+'.png"></div>'+
+      '<div class="mw-tot-name">'+N2+'</div>'+
+      '<div class="mw-tot-val" style="color:'+(!mw?RC:'#1a1f36')+'">'+TOT.v2.toFixed(1)+'</div>'+
+      '<div class="mw-tot-bar-wrap"><div class="mw-tot-bar" style="width:'+w2+'%;background:'+RC+'"></div></div>'+
+    '</div>';
+})();
+</script></div>
