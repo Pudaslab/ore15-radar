@@ -1,0 +1,389 @@
+<!-- ORE15.IT CLASSIFICA FINALE -->
+<style>
+.rk-wrap{font-family:"Segoe UI",Arial,sans-serif;background:#f4f6f9;border-radius:16px;padding:20px 16px;max-width:620px;margin:20px auto;color:#1a1f36;box-sizing:border-box;border:1px solid #dde2ee;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.rk-wrap *{box-sizing:border-box}
+.rk-sitelabel{font-size:10px;letter-spacing:4px;color:#9aa0b8;font-weight:700;text-align:center;margin-bottom:4px}
+.rk-title{font-size:18px;font-weight:800;color:#1a1f36;text-align:center;margin:0 0 4px}
+.rk-sub{font-size:11px;color:#9aa0b8;margin-bottom:14px;text-align:center;line-height:1.5}
+.rk-info{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #dde2ee;border-radius:10px;padding:10px 14px;margin-bottom:12px;min-height:24px}
+.rk-info-flag{width:28px;height:19px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.15);flex-shrink:0;display:none}
+.rk-info-flag img{width:100%;height:100%;object-fit:cover}
+.rk-info-text{font-size:12px;color:#9aa0b8}
+.rk-info-text b{color:#1a1f36;font-size:13px}
+.rk-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;justify-content:center}
+.rk-legend-item{display:flex;align-items:center;gap:4px;font-size:10px;color:#6b7a9e}
+.rk-legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.rk-row{display:grid;grid-template-columns:28px 26px 1fr 80px 36px;align-items:center;gap:6px;padding:6px 4px;border-radius:8px;cursor:pointer;transition:background .15s}
+.rk-row:hover{background:#eef0f7}
+.rk-rank{font-size:11px;font-weight:800;text-align:center}
+.rk-flag{width:26px;height:18px;border-radius:3px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.rk-flag img{width:100%;height:100%;object-fit:cover}
+.rk-name{font-size:12px;font-weight:600;color:#1a1f36;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rk-bar-wrap{background:#eef0f7;border-radius:3px;height:6px;overflow:hidden}
+.rk-bar{height:100%;border-radius:3px}
+.rk-tot{font-size:12px;font-weight:800;text-align:right}
+.rk-footer{text-align:center;font-size:9px;letter-spacing:2px;color:#c0c6d8;margin-top:12px}
+</style>
+<div class="rk-wrap">
+  <div class="rk-sitelabel">ORE15.IT · FIFA WORLD CUP 2026</div>
+  <div class="rk-title">CLASSIFICA EFFICACIA · TORNEO COMPLETO</div>
+  <div class="rk-sub">48 squadre ordinate per TOT.EFFICACIA medio su tutte le partite giocate · Tocca una riga per i dettagli</div>
+  <div class="rk-info" id="rk-info">
+    <div class="rk-info-flag" id="rk-info-flag"><img id="rk-info-img" src="" alt=""></div>
+    <div class="rk-info-text" id="rk-info-text">Tocca una squadra per vedere i dettagli</div>
+  </div>
+  <div class="rk-legend">
+    <div class="rk-legend-item"><div class="rk-legend-dot" style="background:#7c3aed"></div>Top 3</div>
+    <div class="rk-legend-item"><div class="rk-legend-dot" style="background:#059669"></div>Top 4-10</div>
+    <div class="rk-legend-item"><div class="rk-legend-dot" style="background:#0284c7"></div>11-20</div>
+    <div class="rk-legend-item"><div class="rk-legend-dot" style="background:#d97706"></div>21-35</div>
+    <div class="rk-legend-item"><div class="rk-legend-dot" style="background:#dc2626"></div>36-48</div>
+  </div>
+  <div id="rk-list">
+  <div class="rk-row" onclick="rkSel(this,'es','Spagna',16.04,8,14)">
+    <div class="rk-rank" style="color:#7c3aed">🥇</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/es.png" alt="Spagna"></div>
+    <div class="rk-name">Spagna</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:100%;background:#7c3aed"></div></div>
+    <div class="rk-tot" style="color:#7c3aed">16.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'fr','Francia',15.03,7,16)">
+    <div class="rk-rank" style="color:#7c3aed">🥈</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/fr.png" alt="Francia"></div>
+    <div class="rk-name">Francia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:94%;background:#7c3aed"></div></div>
+    <div class="rk-tot" style="color:#7c3aed">15.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'mx','Messico',14.43,5,10)">
+    <div class="rk-rank" style="color:#7c3aed">🥉</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/mx.png" alt="Messico"></div>
+    <div class="rk-name">Messico</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:90%;background:#7c3aed"></div></div>
+    <div class="rk-tot" style="color:#7c3aed">14.4</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'nl','Olanda',13.82,4,11)">
+    <div class="rk-rank" style="color:#059669">4</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/nl.png" alt="Olanda"></div>
+    <div class="rk-name">Olanda</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:86%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.8</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'de','Germania',13.73,4,11)">
+    <div class="rk-rank" style="color:#059669">5</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/de.png" alt="Germania"></div>
+    <div class="rk-name">Germania</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:86%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.7</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'co','Colombia',13.6,5,5)">
+    <div class="rk-rank" style="color:#059669">6</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/co.png" alt="Colombia"></div>
+    <div class="rk-name">Colombia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:85%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'pt','Portogallo',13.43,5,8)">
+    <div class="rk-rank" style="color:#059669">7</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/pt.png" alt="Portogallo"></div>
+    <div class="rk-name">Portogallo</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:84%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.4</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'br','Brasile',13.21,5,10)">
+    <div class="rk-rank" style="color:#059669">8</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/br.png" alt="Brasile"></div>
+    <div class="rk-name">Brasile</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:82%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.2</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'xx','TURCHIA',12.98,3,3)">
+    <div class="rk-rank" style="color:#059669">9</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/xx.png" alt="TURCHIA"></div>
+    <div class="rk-name">TURCHIA</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:81%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">13.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'us','USA',12.92,5,11)">
+    <div class="rk-rank" style="color:#059669">10</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/us.png" alt="USA"></div>
+    <div class="rk-name">USA</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:81%;background:#059669"></div></div>
+    <div class="rk-tot" style="color:#059669">12.9</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ma','Marocco',12.82,6,10)">
+    <div class="rk-rank" style="color:#0284c7">11</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ma.png" alt="Marocco"></div>
+    <div class="rk-name">Marocco</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:80%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.8</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ch','Svizzera',12.72,6,10)">
+    <div class="rk-rank" style="color:#0284c7">12</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ch.png" alt="Svizzera"></div>
+    <div class="rk-name">Svizzera</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:79%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.7</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'gb-eng','Inghilterra',12.64,7,14)">
+    <div class="rk-rank" style="color:#0284c7">13</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/gb-eng.png" alt="Inghilterra"></div>
+    <div class="rk-name">Inghilterra</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:79%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ar','Argentina',12.58,8,19)">
+    <div class="rk-rank" style="color:#0284c7">14</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ar.png" alt="Argentina"></div>
+    <div class="rk-name">Argentina</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:78%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'be','Belgio',12.43,6,14)">
+    <div class="rk-rank" style="color:#0284c7">15</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/be.png" alt="Belgio"></div>
+    <div class="rk-name">Belgio</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:77%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.4</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'kr','Corea del Sud',12.2,3,2)">
+    <div class="rk-rank" style="color:#0284c7">16</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/kr.png" alt="Corea del Sud"></div>
+    <div class="rk-name">Corea del Sud</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:76%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.2</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ci','Costa d\'Avorio',12.19,4,5)">
+    <div class="rk-rank" style="color:#0284c7">17</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ci.png" alt="Costa d'Avorio"></div>
+    <div class="rk-name">Costa d'Avorio</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:76%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.2</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ec','Ecuador',11.99,4,2)">
+    <div class="rk-rank" style="color:#0284c7">18</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ec.png" alt="Ecuador"></div>
+    <div class="rk-name">Ecuador</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:75%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">12.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ca','Canada',11.74,5,9)">
+    <div class="rk-rank" style="color:#0284c7">19</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ca.png" alt="Canada"></div>
+    <div class="rk-name">Canada</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:73%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">11.7</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'jp','Giappone',11.57,4,8)">
+    <div class="rk-rank" style="color:#0284c7">20</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/jp.png" alt="Giappone"></div>
+    <div class="rk-name">Giappone</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:72%;background:#0284c7"></div></div>
+    <div class="rk-tot" style="color:#0284c7">11.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'au','Australia',11.53,4,3)">
+    <div class="rk-rank" style="color:#d97706">21</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/au.png" alt="Australia"></div>
+    <div class="rk-name">Australia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:72%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">11.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'no','Norvegia',11.46,6,13)">
+    <div class="rk-rank" style="color:#d97706">22</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/no.png" alt="Norvegia"></div>
+    <div class="rk-name">Norvegia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:71%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">11.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'eg','Egitto',11.29,5,8)">
+    <div class="rk-rank" style="color:#d97706">23</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/eg.png" alt="Egitto"></div>
+    <div class="rk-name">Egitto</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:70%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">11.3</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'za','Sudafrica',10.42,4,2)">
+    <div class="rk-rank" style="color:#d97706">24</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/za.png" alt="Sudafrica"></div>
+    <div class="rk-name">Sudafrica</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:65%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">10.4</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'sn','Senegal',10.22,4,10)">
+    <div class="rk-rank" style="color:#d97706">25</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/sn.png" alt="Senegal"></div>
+    <div class="rk-name">Senegal</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:64%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">10.2</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'uy','Uruguay',9.87,3,3)">
+    <div class="rk-rank" style="color:#d97706">26</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/uy.png" alt="Uruguay"></div>
+    <div class="rk-name">Uruguay</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:62%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.9</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'gh','Ghana',9.68,4,2)">
+    <div class="rk-rank" style="color:#d97706">27</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/gh.png" alt="Ghana"></div>
+    <div class="rk-name">Ghana</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:60%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.7</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ir','Iran',9.63,3,3)">
+    <div class="rk-rank" style="color:#d97706">28</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ir.png" alt="Iran"></div>
+    <div class="rk-name">Iran</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:60%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'cd','RD Congo',9.56,4,5)">
+    <div class="rk-rank" style="color:#d97706">29</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/cd.png" alt="RD Congo"></div>
+    <div class="rk-name">RD Congo</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:60%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'cv','Capo Verde',9.49,4,4)">
+    <div class="rk-rank" style="color:#d97706">30</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/cv.png" alt="Capo Verde"></div>
+    <div class="rk-name">Capo Verde</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:59%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'dz','Algeria',9.32,4,5)">
+    <div class="rk-rank" style="color:#d97706">31</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/dz.png" alt="Algeria"></div>
+    <div class="rk-name">Algeria</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:58%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.3</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'pa','Panama',9.11,3,0)">
+    <div class="rk-rank" style="color:#d97706">32</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/pa.png" alt="Panama"></div>
+    <div class="rk-name">Panama</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:57%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.1</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'hr','Croazia',9.04,4,6)">
+    <div class="rk-rank" style="color:#d97706">33</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/hr.png" alt="Croazia"></div>
+    <div class="rk-name">Croazia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:56%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">9.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ba','Bosnia',8.54,4,5)">
+    <div class="rk-rank" style="color:#d97706">34</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ba.png" alt="Bosnia"></div>
+    <div class="rk-name">Bosnia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:53%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">8.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'py','Paraguay',8.52,5,3)">
+    <div class="rk-rank" style="color:#d97706">35</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/py.png" alt="Paraguay"></div>
+    <div class="rk-name">Paraguay</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:53%;background:#d97706"></div></div>
+    <div class="rk-tot" style="color:#d97706">8.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'gb-sct','Scozia',8.05,3,1)">
+    <div class="rk-rank" style="color:#dc2626">36</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/gb-sct.png" alt="Scozia"></div>
+    <div class="rk-name">Scozia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:50%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">8.1</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'se','Svezia',7.82,4,7)">
+    <div class="rk-rank" style="color:#dc2626">37</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/se.png" alt="Svezia"></div>
+    <div class="rk-name">Svezia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:49%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">7.8</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'sa','Arabia Saudita',7.63,3,1)">
+    <div class="rk-rank" style="color:#dc2626">38</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/sa.png" alt="Arabia Saudita"></div>
+    <div class="rk-name">Arabia Saudita</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:48%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">7.6</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'at','Austria',7.15,4,6)">
+    <div class="rk-rank" style="color:#dc2626">39</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/at.png" alt="Austria"></div>
+    <div class="rk-name">Austria</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:45%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">7.2</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'cz','Rep. Ceca',6.99,3,2)">
+    <div class="rk-rank" style="color:#dc2626">40</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/cz.png" alt="Rep. Ceca"></div>
+    <div class="rk-name">Rep. Ceca</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:44%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">7.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'ht','Haiti',5.72,3,2)">
+    <div class="rk-rank" style="color:#dc2626">41</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/ht.png" alt="Haiti"></div>
+    <div class="rk-name">Haiti</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:36%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">5.7</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'jo','Giordania',5.03,3,3)">
+    <div class="rk-rank" style="color:#dc2626">42</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/jo.png" alt="Giordania"></div>
+    <div class="rk-name">Giordania</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:31%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">5.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'nz','Nuova Zelanda',3.81,3,4)">
+    <div class="rk-rank" style="color:#dc2626">43</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/nz.png" alt="Nuova Zelanda"></div>
+    <div class="rk-name">Nuova Zelanda</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:24%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">3.8</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'cw','Curaçao',3.02,3,1)">
+    <div class="rk-rank" style="color:#dc2626">44</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/cw.png" alt="Curaçao"></div>
+    <div class="rk-name">Curaçao</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:19%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">3.0</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'uz','Uzbekistan',2.51,3,2)">
+    <div class="rk-rank" style="color:#dc2626">45</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/uz.png" alt="Uzbekistan"></div>
+    <div class="rk-name">Uzbekistan</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:16%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">2.5</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'qa','Qatar',2.38,3,2)">
+    <div class="rk-rank" style="color:#dc2626">46</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"></div>
+    <div class="rk-name">Qatar</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:15%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">2.4</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'iq','Iraq',1.34,3,1)">
+    <div class="rk-rank" style="color:#dc2626">47</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/iq.png" alt="Iraq"></div>
+    <div class="rk-name">Iraq</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:8%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">1.3</div>
+  </div>
+  <div class="rk-row" onclick="rkSel(this,'tn','Tunisia',0.21,3,2)">
+    <div class="rk-rank" style="color:#dc2626">48</div>
+    <div class="rk-flag"><img src="https://flagcdn.com/w40/tn.png" alt="Tunisia"></div>
+    <div class="rk-name">Tunisia</div>
+    <div class="rk-bar-wrap"><div class="rk-bar" style="width:1%;background:#dc2626"></div></div>
+    <div class="rk-tot" style="color:#dc2626">0.2</div>
+  </div>  </div>
+  <div class="rk-note" style="font-size:10px;color:#b45309;background:#fef3d9;border:1px solid #f59e0b33;border-radius:8px;padding:8px 12px;margin-bottom:10px;text-align:center">⚠️ La finale per il 3°/4° posto non è considerata nelle statistiche</div><div class="rk-footer">Indici proprietari ore15.it · Sistema di valutazione esclusivo</div>
+</div>
+<script>
+function rkSel(el,flag,name,tot,partite,gf){
+  document.getElementById('rk-info-img').src='https://flagcdn.com/w80/'+flag+'.png';
+  document.getElementById('rk-info-flag').style.display='block';
+  document.getElementById('rk-info-text').innerHTML='<b>'+name+'</b> — TOT.Efficacia: '+tot.toFixed(2)+' · Partite: '+partite+' · Gol segnati: '+gf;
+  document.querySelectorAll('.rk-row').forEach(function(r){r.style.background=''});
+  el.style.background='#eef0f7';
+}
+</script>
